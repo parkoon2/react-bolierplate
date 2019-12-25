@@ -40,6 +40,8 @@ module.exports = {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist")
   },
+  // development 환경에서만 실행되어야함!
+  // production 에서 실행해도 되지만, 변경 사항이 적용되는데 시간이 오래걸림.
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
     // 전체 페이지 리로딩
