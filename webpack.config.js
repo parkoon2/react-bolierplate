@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   name: "boilerpate",
-  mode: "production",
+  mode: "development",
   entry: {
     app: path.resolve(__dirname, "src", "index.js")
   },
@@ -39,6 +39,20 @@ module.exports = {
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist")
+  },
+  devServer: {
+    contentBase: path.resolve(__dirname, 'dist'),
+    // 전체 페이지 리로딩
+    inline: true,
+    // 부분 리로딩
+    hot: true,
+    host: 'localhost',
+    port: 5500,
+    // Enable gzip compression of generated files.
+    compress: true,
+    // It is important to tell WebpackDevServer to use the same "root" path
+    // as we specified in the config. In development, we always serve from /.
+    publicPath: '/',
   },
   plugins: [
     new HtmlWebpackPlugin({
