@@ -28,6 +28,11 @@ module.exports = {
         test: /\.css$/,
         // 오른쪽에서 왼쪽으로 순으로 실행된다. 순서에 유의!
         use: [MiniCssExtractPlugin.loader, 'css-loader']
+      },
+      {
+        test: /\.scss$/,
+        // 실제로 scss 파일을 css로 트랜스파일링 하는것은 node-sass 모듈이다.
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
       }
     ]
   },
