@@ -4,8 +4,8 @@
   "description": "boilerpate for qualson frontend project",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --open",
-    "build": "webpack"
+    "dev": "webpack-dev-server --config ./config/webpack.config.dev --open",
+    "build": "webpack --config ./config/webpack.config.prod"
   },
   "keywords": [
     "qualson",
