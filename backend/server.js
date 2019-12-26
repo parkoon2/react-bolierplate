@@ -4,7 +4,7 @@ const express = require('express')
 const app = express()
 const server = http.createServer(app)
 const PORT = require('./helper/port').SERVER_PORT
-const middleware = require('./helper/middlewares')
+const middleware = require('./middleware')
 
 middleware(app)
 
