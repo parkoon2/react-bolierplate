@@ -8,7 +8,7 @@ const PORT = require('./helper/port').SERVER_PORT
 const middlewareConfigure = require('./middleware')
 const exception = require('./helper/exception')
 
-require('./config/database')
+// require('./config/database')
 
 middlewareConfigure(app)
 
