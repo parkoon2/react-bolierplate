@@ -8,7 +8,7 @@ import {
   Link
 } from "react-router-dom";
 
-import "./styles/index.css";
+import "./styles/reset.scss";
 import "./styles/index.scss";
 
 ReactDOM.render(

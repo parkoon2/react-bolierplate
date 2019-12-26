@@ -2,7 +2,7 @@ import React from "react"
 import { Route, Switch, Link } from 'react-router-dom'
 
 // Components
-import Button from './components/Button'
+import Header from './components/Header'
 import PrivateRoute from "./router/PrivateRoute";
 
 // Pages
@@ -11,14 +11,7 @@ import LoginPage from './pages/LoginPage'
 function App() {
   return <div className="app">
 
-    <nav>
-      <Link to="/">
-        Home
-      </Link>
-      <Link to="/about">
-        About
-      </Link>
-    </nav>
+    <Header />
 
     <Switch>
       <Route exact path="/">
