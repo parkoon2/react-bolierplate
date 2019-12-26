@@ -1,6 +1,6 @@
 import React from 'react'
-
-const Button = () => <div>
+import style from './button.scss'
+const Button = () => <div className={style.container}>
     button
 </div>
 

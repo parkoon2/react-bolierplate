@@ -5,6 +5,9 @@ import { Route, Switch, Link } from 'react-router-dom'
 import Button from './components/Button'
 import PrivateRoute from "./router/PrivateRoute";
 
+// Pages
+import LoginPage from './pages/LoginPage'
+
 function App() {
   return <div className="app">
 
@@ -20,6 +23,9 @@ function App() {
     <Switch>
       <Route exact path="/">
         <Home />
+      </Route>
+      <Route path="/login">
+        <LoginPage />
       </Route>
       <PrivateRoute path="/about">
         <About />
