@@ -5,34 +5,15 @@ const path = require('path')
 const app = express()
 const server = http.createServer(app)
 const PORT = require('./helper/port').SERVER_PORT
-const middleware = require('./middleware')
+const middlewareConfigure = require('./middleware')
+const exception = require('./helper/exception')
 
-middleware(app)
-
+middlewareConfigure(app)
 
 app.use(express.static(path.join(__dirname, '../', 'frontend', 'dist')));
+app.use(exception.handle404Error)
 
-server.on('listening', handleListening)
-server.on('error', handleError)
-
-function handleError(error) {
-    if (error.syscall !== 'listen') {
-        throw error;
-    }
-    switch (error.code) {
-        case 'EACCES':
-            console.error(`Pipe ${PORT} requires elevated privileges.`);
-            process.exit(1);
-        case 'EADDRINUSE':
-            console.error(`Port ${PORT} is already in use.`);
-            process.exit(1);
-        default:
-            throw error;
-    }
-}
-
-function handleListening() {
-    console.log(`Server is running on ${PORT}.`);
-}
+server.on('listening', exception.handleListening.bind(this, PORT))
+server.on('error', exception.handleServerError)
 
 module.exports = server
