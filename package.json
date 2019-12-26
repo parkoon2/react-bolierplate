@@ -1,0 +1,9 @@
+{
+    "name": "boilerplate",
+    "version": "0.0.1",
+    "scripts": {
+        "dev": "cd frontend && npm run dev",
+        "deploy": "cd frontend && npm i && npm run build && cd ../backend && npm i && NODE_ENV=production PORT=80 node start"
+    },
+    "dependencies": {}
+}
