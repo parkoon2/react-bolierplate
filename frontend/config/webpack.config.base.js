@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
     name: "boilerpate",
-    entry: ['@babel/polyfill', './src/index.js'],
+    entry: ['./src/index.js'],
     module: {
         rules: [
             {

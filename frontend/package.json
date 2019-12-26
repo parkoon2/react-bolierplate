@@ -4,7 +4,7 @@
   "description": "boilerpate for qualson frontend project",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --config ./config/webpack.config.dev --open",
+    "dev": "webpack-dev-server --config ./config/webpack.config.dev",
     "build": "webpack --config ./config/webpack.config.prod"
   },
   "keywords": [
@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2"
   }
 }
