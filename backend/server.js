@@ -8,6 +8,8 @@ const PORT = require('./helper/port').SERVER_PORT
 const middlewareConfigure = require('./middleware')
 const exception = require('./helper/exception')
 
+require('./config/database')
+
 middlewareConfigure(app)
 
 app.use(express.static(path.join(__dirname, '../', 'frontend', 'dist')));
