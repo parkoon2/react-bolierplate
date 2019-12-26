@@ -6,7 +6,7 @@ import Header from './components/Header'
 import PrivateRoute from "./router/PrivateRoute";
 
 // Pages
-import LoginPage from './pages/LoginPage'
+import Login from './pages/Login'
 
 function App() {
   return <div className="app">
@@ -18,7 +18,7 @@ function App() {
         <Home />
       </Route>
       <Route path="/login">
-        <LoginPage />
+        <Login />
       </Route>
       <PrivateRoute path="/about">
         <About />
@@ -28,7 +28,7 @@ function App() {
 }
 
 function Home() {
-  return <h1>Home page</h1>
+  return <h1>Home page!!</h1>
 
 }
 

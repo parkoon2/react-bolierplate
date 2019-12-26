@@ -1,0 +1,43 @@
+
+.login {
+
+    position: relative;
+
+    .login_form {
+        float: left;
+        width: 730px;
+        margin-right: 420px;
+        box-sizing: border-box;
+        padding: 165px 180px 0px 180px;
+        text-align: center;
+
+        h1 {
+            font-size: 20px;
+            color: #13141a;
+            font-weight: bold;
+        }
+
+        p {
+            margin-top: 26px;
+            font-size: 18px;
+            color: #687980;
+            font-weight: 400;
+        }
+
+        .form_btn {
+            margin-top: 15px;
+        }
+
+        
+
+    }
+    
+    .login_photo {
+        position: absolute;
+        right:0;
+        float: left;
+        background: blue;
+        width: 50%;
+        height: 500px;
+    }
+}
