@@ -20,5 +20,8 @@
     "hpkp": "^2.0.0",
     "morgan": "^1.9.1",
     "ms": "^2.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }

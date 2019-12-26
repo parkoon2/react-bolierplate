@@ -1,5 +1,6 @@
 const http = require('http')
 const express = require('express')
+const path = require('path')
 
 const app = express()
 const server = http.createServer(app)
@@ -7,6 +8,9 @@ const PORT = require('./helper/port').SERVER_PORT
 const middleware = require('./middleware')
 
 middleware(app)
+
+
+app.use(express.static(path.join(__dirname, '../', 'frontend', 'dist')));
 
 server.on('listening', handleListening)
 server.on('error', handleError)
