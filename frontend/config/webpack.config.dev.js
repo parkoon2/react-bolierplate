@@ -4,6 +4,7 @@ const baseConfig = require('./webpack.config.base')
 
 module.exports = merge(baseConfig, {
   mode: "development",
+  devtool: 'eval-source-map',
   // development 환경에서만 실행되어야함!
   // production 에서 실행해도 되지만, 변경 사항이 적용되는데 시간이 오래걸림.
   devServer: {
