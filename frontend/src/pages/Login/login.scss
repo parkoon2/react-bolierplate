@@ -23,6 +23,17 @@
             font-weight: 400;
         }
 
+        .form_input {
+            margin-top: 12px;
+            .input_error {
+                display: inline-block;
+                text-align: left;
+                width: 100%;
+                margin-top: 4px;
+                color: tomato;
+            }
+        }
+
         .form_btn {
             margin-top: 15px;
         }

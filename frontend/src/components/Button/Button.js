@@ -4,7 +4,7 @@ import classNames from 'classnames/bind'
 
 const cn = classNames.bind(style)
 
-const Button = ({ children, disabled }) => <button disabled className={cn('button', { disabled })}>
+const Button = ({ children, disabled, ...rest }) => <button {...rest} disabled={disabled} className={cn('button', { disabled })}>
     {children}
 </button>
 
