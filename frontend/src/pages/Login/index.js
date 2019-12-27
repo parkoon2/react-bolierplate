@@ -19,17 +19,14 @@ const LoginPage = () => {
                     <p>Good evening! Webcome back.</p>
 
                     <p>
-
                         <Input type="text" placeholder="이메일 주소를 입력하세요" />
                     </p>
 
                     <p>
                         <Input type="password" placeholder="비밀번호를 입력하세요" />
-
                     </p>
                     <div className={style.form_btn}>
                         <Button disabled color="gray">로그인</Button>
-
                     </div>
                     <div className={style.form_btn}>
                         <Button color="green">회원가입</Button>
