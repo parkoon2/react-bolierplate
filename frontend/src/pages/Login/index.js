@@ -1,7 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 
 // Helper
 import { loginValidator } from '../../helper/validator'
+
+// Actions
+import { fetchLogin } from '../../actions/user'
 
 // Components
 import Container from '../../components/Container'
@@ -9,17 +14,35 @@ import Row from '../../components/Row'
 import Button from '../../components/Button'
 import Input from '../../components/Input'
 
+// Style
 import style from './login.scss'
+
+// Custom Hook
 import useForm from '../../hook/useForm'
+
+// Helper
+import fakeAuth from '../../helper/auth'
 
 
 const LoginPage = () => {
 
-    const login = () => {
-        alert('login!')
-    }
-
+    const dispatch = useDispatch()
+    const history = useHistory()
+    const logged = useSelector(({ user }) => user.logged, []);
     const { values, errors, handleChange, handleSubmit } = useForm(login, loginValidator)
+
+    useEffect(() => {
+        if (logged) {
+            console.log('로그인 성공!')
+            fakeAuth.authenticate()
+            history.push('/private');
+
+        }
+    }, [logged])
+
+    function login() {
+        dispatch(fetchLogin(values))
+    }
 
     return (
         <Container>
@@ -49,7 +72,7 @@ const LoginPage = () => {
                     </div>
                 </div>
                 <div className={style.login_photo}>
-                    <img class="david" src={require('../../assets/images/bg_account_david.png')} alt="Work smarter, Not harder. 최선을 다하는 강의보다 최고의 강의를 합니다."></img>
+                    <img src={require('../../assets/images/bg_account_david.png')} alt="Work smarter, Not harder. 최선을 다하는 강의보다 최고의 강의를 합니다."></img>
                     <span className={style.photo_outline}></span>
 
                 </div>

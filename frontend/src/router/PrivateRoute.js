@@ -5,7 +5,7 @@ import fakeAuth from "../helper/auth";
 
 function PrivateRoute({ children, ...rest }) {
 
-    if (!fakeAuth.isAuthenticated) alert('권한이 없습니다...')
+    if (!fakeAuth.isAuthenticated) console.log('권한이 없습니다...')
 
     return (
         <Route
@@ -16,7 +16,7 @@ function PrivateRoute({ children, ...rest }) {
                 ) : (
                         <Redirect
                             to={{
-                                pathname: "/",
+                                pathname: "/login",
                                 state: { from: location }
                             }}
                         />

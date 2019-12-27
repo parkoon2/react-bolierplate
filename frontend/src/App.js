@@ -7,6 +7,7 @@ import PrivateRoute from "./router/PrivateRoute";
 
 // Pages
 import Login from './pages/Login'
+import Private from "./pages/Private";
 
 function App() {
   return <div className="app">
@@ -14,26 +15,14 @@ function App() {
     <Header />
 
     <Switch>
-      <Route exact path="/">
-        <Home />
-      </Route>
       <Route path="/login">
         <Login />
       </Route>
-      <PrivateRoute path="/about">
-        <About />
+      <PrivateRoute path="/private">
+        <Private />
       </PrivateRoute>
     </Switch>
   </div>;
-}
-
-function Home() {
-  return <h1>Home page!!</h1>
-
-}
-
-function About() {
-  return <h1>About page</h1>
 }
 
 export default App;
