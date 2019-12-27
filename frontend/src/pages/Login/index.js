@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 // Helper
-import { emailValidator } from '../../helper/validator'
+import { loginValidator } from '../../helper/validator'
 
 // Components
 import Container from '../../components/Container'
@@ -19,20 +19,8 @@ const LoginPage = () => {
         alert('login!')
     }
 
-    const validator = (values) => {
-        let errors = {};
-        if (!values.email) {
-            errors.email = '이메일 주소를 입력해 주세요'
-        }
-        if (!values.password) {
-            errors.password = '패스워드를 입력해주세요'
-        }
-        return errors;
-    }
+    const { values, errors, handleChange, handleSubmit } = useForm(login, loginValidator)
 
-    const { values, errors, handleChange, handleSubmit } = useForm(login, validator)
-
-    
     return (
         <Container>
             <div className={style.login}>
@@ -51,7 +39,7 @@ const LoginPage = () => {
                         {errors.password && <span className={style.input_error}>{errors.password}</span>}
                     </div>
 
-             
+
 
                     <div className={style.form_btn}>
                         <Button onClick={handleSubmit} /*disabled*/ color="gray">로그인</Button>
