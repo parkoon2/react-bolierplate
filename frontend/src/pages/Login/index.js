@@ -37,6 +37,8 @@ const LoginPage = () => {
                 </div>
                 <div className={style.login_photo}>
                     <img class="david" src={require('../../assets/images/bg_account_david.png')} alt="Work smarter, Not harder. 최선을 다하는 강의보다 최고의 강의를 합니다."></img>
+                    <span className={style.photo_outline}></span>
+
                 </div>
             </div>
 

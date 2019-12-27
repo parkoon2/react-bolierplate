@@ -61,6 +61,7 @@ module.exports = {
                 options: {
                     name: '[hash].[ext]',
                     limit: 10000,
+                    esModule: false
                 },
             },
         ]
